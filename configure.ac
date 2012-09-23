@@ -56,7 +56,7 @@ AM_PROG_CC_C_O
 PKG_PROG_PKG_CONFIG
 
 # Required libraries
-PKG_CHECK_MODULES(EVD, evd-0.1 >= 0.1.22)
+PKG_CHECK_MODULES(EVD, evd-0.1 >= 0.1.24)
 
 # Silent build
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
