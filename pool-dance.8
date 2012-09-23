@@ -1,0 +1,63 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH pool-dance 8 "2012\-09\-23"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+pool-dance \- Simple, lightweight and memory efficient Bitcoin mining pool
+.SH SYNOPSIS
+.B pool-dance
+.I [OPTIONS]
+.SH DESCRIPTION
+This manual page documents briefly the
+.B pool-dance
+command.
+.PP
+.B pool-dance
+is a Bitcoin mining pool service that focus on simplicity, efficiency and
+scalability. It provides the core pool functionality and does not deal
+with worker statistics or rewards. Instead, it uses log files to store all
+relevant activity so it does not depend on databases or third parties to
+operate.
+
+For a complete pool service that provide real-time statistics and
+other typical features, another program should open the log files that
+.B pool-dance
+generates and use it as source of information.
+
+.B pool-dance
+uses an asynchronous, event-driven loop and does efficient
+I/O using epoll. It is written in C using the GLib and EventDance libraries
+extensively.
+
+.SH OPTIONS
+.TP
+.BI \-h "\fR, " \-\^\-help
+Display a brief summary of the command\-line options and their default
+values.
+.TP
+.BI \-c " config\fR, " \-\^\-conf= "config"
+Absolute path for the configuration file to use, default is
+.I /etc/pool-dance/pool-dance.conf.
+.TP
+.BI \-D "\fR, " \-\^\-daemonize
+Run the service in the background.
+.SH FILES
+.TP
+.I /etc/pool-dance/pool-dance.conf
+pool-dance config file.
+.SH AUTHOR
+This manpage has been written by
+Eduardo Lima Mitev <elima@igalia.com>
