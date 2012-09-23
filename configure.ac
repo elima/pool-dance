@@ -1,8 +1,8 @@
 #
 # configure.ac
 #
-# pool-dance: Bitcoin mining pool based on EventDance
-#             <http://eventdance.org/pool-dance>
+# pool-dance: Simple, light-weight and efficient Bitcoin mining pool
+#             <https://github.com/elima/pool-dance>
 #
 # Copyright (C) 2012, Eduardo Lima Mitev <elima@igalia.com>
 #
@@ -19,12 +19,13 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 # Affero General Public License at http://www.gnu.org/licenses/agpl.html
 # for more details.
+#
 
 AC_PREREQ(2.59)
 
 m4_define([prj_name],           [Pool Dance])
 m4_define([prj_short_name],     [pool-dance])
-m4_define([prj_home],           [http://eventdance.org/pool-dance])
+m4_define([prj_home],           [https://github.com/elima/pool-dance])
 
 m4_define([prj_version_major], [0])
 m4_define([prj_version_minor], [1])

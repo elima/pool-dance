@@ -1,8 +1,8 @@
 /*
  * block-monitor.h
  *
- * pool-dance: Bitcoin mining pool based on EventDance
- *             <http://eventdance.org/pool-dance>
+ * pool-dance: Simple, light-weight and efficient Bitcoin mining pool
+ *             <https://github.com/elima/pool-dance>
  *
  * Copyright (C) 2012, Eduardo Lima Mitev <elima@igalia.com>
  *
