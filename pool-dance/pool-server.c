@@ -25,6 +25,8 @@
 
 #define CONFIG_GROUP_NAME "pool-server"
 
+#define SERVER_NAME "pool-dance/" VERSION
+
 #define DEFAULT_LISTEN_ADDR "0.0.0.0"
 #define DEFAULT_LISTEN_PORT 8335
 
@@ -342,6 +344,7 @@ pool_server_new (GKeyFile            *config,
                                                     NULL);
 
   self->headers = evd_jsonrpc_http_server_get_response_headers (self->rpc);
+  soup_message_headers_replace (self->headers, "Server", SERVER_NAME);
   soup_message_headers_replace (self->headers, "X-Long-Polling", LP_PATH);
 
   /* main Web service */

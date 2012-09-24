@@ -6,6 +6,7 @@ sbin_PROGRAMS = pool-dance
 pool_dance_CFLAGS = \
 	-Wall \
 	$(EVD_CFLAGS) \
+	-DVERSION="\"@PRJ_VERSION@\"" \
 	-DENABLE_TESTS="\"$(enable_tests)\""
 
 if ENABLE_DEBUG

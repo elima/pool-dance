@@ -46,6 +46,9 @@ AM_INIT_AUTOMAKE
 PRJ_NAME="prj_short_name"
 AC_SUBST(PRJ_NAME)
 
+PRJ_VERSION="prj_version"
+AC_SUBST(PRJ_VERSION)
+
 # Check for programs
 AC_PROG_LIBTOOL
 AC_PROG_CC
