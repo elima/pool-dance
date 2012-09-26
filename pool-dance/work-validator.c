@@ -531,7 +531,7 @@ work_validator_track_work_sent (WorkValidator   *self,
 
   work_request_get_client_info (work_request, &user, NULL, NULL, NULL);
 
-  tracked_work = g_slice_new (TrackedWork);
+  tracked_work = g_slice_new0 (TrackedWork);
   tracked_work->upstream_service = upstream_service;
   tracked_work->user = user;
   memcpy (tracked_work->version, data + 0, 8);
