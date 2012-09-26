@@ -132,6 +132,9 @@ on_log_entry_written (GObject      *obj,
 static void
 write_all (FileLogger *self)
 {
+  if (g_output_stream_has_pending (G_OUTPUT_STREAM (self->stream)))
+    return;
+
   if (! self->frozen && ! self->flushing && self->async_result == NULL)
     {
       while (g_queue_get_length (self->queue) > 0)
@@ -144,17 +147,14 @@ write_all (FileLogger *self)
         }
     }
 
-  if (self->write_all_string->len > 0 &&
-      ! g_output_stream_has_pending (G_OUTPUT_STREAM (self->stream)))
-    {
-      g_output_stream_write_async (G_OUTPUT_STREAM (self->stream),
-                                   self->write_all_string->str,
-                                   self->write_all_string->len,
-                                   self->priority,
-                                   self->cancellable,
-                                   on_log_entry_written,
-                                   self);
-    }
+  if (self->write_all_string->len > 0)
+    g_output_stream_write_async (G_OUTPUT_STREAM (self->stream),
+                                 self->write_all_string->str,
+                                 self->write_all_string->len,
+                                 self->priority,
+                                 self->cancellable,
+                                 on_log_entry_written,
+                                 self);
 }
 
 static gboolean
