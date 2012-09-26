@@ -159,6 +159,7 @@ work_validator_free (WorkValidator *self)
   if (self->work_by_merkle_root_prev != NULL)
     g_hash_table_unref (self->work_by_merkle_root_prev);
   g_free (self->block_hash);
+  g_free (self->block_hash_prev);
 
   g_slice_free (WorkValidator, self);
 }
